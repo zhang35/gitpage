@@ -81,9 +81,8 @@ theme: maupassant
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository:
-    #coding: git@git.coding.net:zhang35/zhang35.git,master
-    github: git@github.com:zhang35/zhang35.github.io.git,master
+  repo: git@github.com:zhang35/zhang35.github.io.git
+  branch: master
   message: 'Daily update: {{now("YYYY-MM-DD HH:mm:ss")}} by zhang35'
 
 # 自动生成sitemap
