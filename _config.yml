@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Jinsane's Blog
-subtitle: 不着急，不害怕，不要脸
+title: zhang35's Blog
+subtitle: 日积月累
 description:
 keywords:
-author: Jinsane#5
-language: zh-Hans
+author: zhang35
+language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://zhang35.coding.me
+url: https://zhang35.github.io
 root: /
 permalink: :year-:title.html
 permalink_defaults:
@@ -41,7 +41,7 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: false
+  auto_detect: true
   tab_replace:
   
 # Home page setting
@@ -82,7 +82,7 @@ theme: maupassant
 deploy:
   type: git
   repository:
-    coding: git@git.coding.net:zhang35/zhang35.git,master
+    #coding: git@git.coding.net:zhang35/zhang35.git,master
     github: git@github.com:zhang35/zhang35.github.io.git,master
   message: 'Daily update: {{now("YYYY-MM-DD HH:mm:ss")}} by zhang35'
 
