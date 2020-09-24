@@ -10,7 +10,9 @@ description: 积极主动；以始为终；要事第一；双赢思维；知彼�
 提高认知水平的经典书籍。
 
 作者总结了从个人修养到为人处世的七项原则，形成了一套完整的体系：
-![成熟模式图](https://upload-images.jianshu.io/upload_images/6240664-99b4d3aef41b4cb2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/720)
+
+
+![成熟模式图](https://lh3.googleusercontent.com/proxy/hawJy9aLQ-UtAUH2Gh_cTkroiYAFxVK1bCerzcPoyFJnJ1z2HXEBsed-waCR1HLXspnxdcPka7_11raykb-Zaugh7hKp0yrwFNG4)
 
 > “成熟模式图”( Maturity Continuum)即人类成长的三个阶段，分别为依赖期、独立期、互赖期。
 依赖期的人靠别人来实现愿望；独立期的人单枪匹马打天下；互赖期的人，群策群力实现最高成就。
@@ -280,3 +282,4 @@ description: 积极主动；以始为终；要事第一；双赢思维；知彼�
 跟中药一样，材料简单，重在熬制。
 
 以后愿多从厚重的国学经典中寻求修身处世之道。
+

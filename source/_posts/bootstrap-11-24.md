@@ -4,6 +4,7 @@ date: 2018-11-24 11:21:41
 tags: 
 - bootstrap
 description: Bootstrap学习笔记
+categories: 前端开发 
 ---
 
 > Bootstrap 包含了一个响应式的、移动设备优先的、不固定的网格系统
@@ -58,12 +59,12 @@ description: Bootstrap学习笔记
 ## 引入bootstrap.css
 单纯引入bootstrap.css后，页面内容立即有了变化，左边缘的文字已显示不全。
 
-![引入bootstrap.css前](https://upload-images.jianshu.io/upload_images/6240664-6404efaf1119d3be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![引入bootstrap.css前](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LTY0MDRlZmFmMTExOWQzYmUucG5n?x-oss-process=image/format,png)
 
-![引入bootstrap.css后](https://upload-images.jianshu.io/upload_images/6240664-f281ed55829b7e00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![引入bootstrap.css后](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LWYyODFlZDU1ODI5YjdlMDAucG5n?x-oss-process=image/format,png)
 
 查看样式，也没找到答案。求解。
-![没找到](https://upload-images.jianshu.io/upload_images/6240664-7392c18ef82524f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![没找到](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LTczOTJjMThlZjgyNTI0ZjIucG5n?x-oss-process=image/format,png)
 
 
 ## 添加Container
@@ -72,7 +73,7 @@ description: Bootstrap学习笔记
 
 把内容放入`<div class="container">`后，上一步遇到的页面显示不全问题就消失了。
 
-![image.png](https://upload-images.jianshu.io/upload_images/6240664-41d3b39e2688464b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LTQxZDNiMzllMjY4ODQ2NGIucG5n?x-oss-process=image/format,png)
 
 也可替换为`<div class="container-fluid">`，具体参考：https://blog.csdn.net/weixin_42097173/article/details/80381896
 
@@ -82,7 +83,7 @@ description: Bootstrap学习笔记
 > - 内容应该放置在列内，且唯有列可以是行的直接子元素。
 
 每一行自动分为12列，通过划分12个单位来排版。列数应 <= 12。
-![bootstrap栅格系统](https://upload-images.jianshu.io/upload_images/6240664-52be49f2cddb72be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![bootstrap栅格系统](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LTUyYmU0OWYyY2RkYjcyYmUucG5n?x-oss-process=image/format,png)
 
 通过以下方式将元素嵌入网格：
 ```
@@ -92,12 +93,12 @@ description: Bootstrap学习笔记
 </div>
 ```
 
-|类名|效果|
-|-|-|
-|.col-xs-|　　无论屏幕宽度如何，单元格都在一行，宽度按照百分比设置；试用于手机；|
-|.col-sm-|　　屏幕大于768px时，单元格在一行显示；屏幕小于768px时，独占一行；试用于平板；|
-|.col-md-|　　屏幕大于992px时，单元格在一行显示；屏幕小于992px时，独占一行；试用于桌面显示器；|
-|.col-lg-|　　屏幕大于1200px时，单元格在一行显示；屏幕小于1200px时，独占一行；适用于大型桌面显示器；|
+| 类名     | 效果                                                         |
+| -------- | ------------------------------------------------------------ |
+| .col-xs- | 无论屏幕宽度如何，单元格都在一行，宽度按照百分比设置；试用于手机； |
+| .col-sm- | 屏幕大于768px时，单元格在一行显示；屏幕小于768px时，独占一行；试用于平板； |
+| .col-md- | 屏幕大于992px时，单元格在一行显示；屏幕小于992px时，独占一行；试用于桌面显示器； |
+| .col-lg- | 屏幕大于1200px时，单元格在一行显示；屏幕小于1200px时，独占一行；适用于大型桌面显示器； |
 
 具体参考：https://www.cnblogs.com/JerryTao/p/5476027.html
 

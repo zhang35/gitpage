@@ -5,18 +5,15 @@ tags: java web
 categories: Java Web
 ---
 
-使用SSH架构（Spring+SpringMVC+Hibernate）实现了简单的调查问卷网站。
-<!-- more -->
-效果如图：
-![投票页面](http://upload-images.jianshu.io/upload_images/6240664-24695bd8ed1d0ff3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/720)
-![查看结果页面](http://upload-images.jianshu.io/upload_images/6240664-d06f222135008a0e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/720)
+使用SSH架构（Spring+SpringMVC+Hibernate）实现了简单的调查问卷网站。最终效果如图：
+![投票页面](https://imgconvert.csdnimg.cn/aHR0cDovL3VwbG9hZC1pbWFnZXMuamlhbnNodS5pby91cGxvYWRfaW1hZ2VzLzYyNDA2NjQtMjQ2OTViZDhlZDFkMGZmMy5wbmc?x-oss-process=image/format,png)
+![查看结果页面](https://imgconvert.csdnimg.cn/aHR0cDovL3VwbG9hZC1pbWFnZXMuamlhbnNodS5pby91cGxvYWRfaW1hZ2VzLzYyNDA2NjQtZDA2ZjIyMjEzNTAwOGEwZS5wbmc?x-oss-process=image/format,png)
 
 下面整理实现流程。
 
 ---
-
 ## 前言
-### SSH架构
+#### 1.SSH架构
 SSH是[MVC](https://baike.baidu.com/item/MVC)架构的一种实现。
 
 Spring、SpringMVC、Hibernate各自用处分别是：
@@ -25,7 +22,7 @@ Spring、SpringMVC、Hibernate各自用处分别是：
 - SpringMVC实现了MVC架构，使得结构清晰、分工明确。
 
 （Spring和SpringMVC区别：Spring是IOC和AOP的容器框架，参考：[谈谈Spring中的IOC和AOP概念](http://blog.csdn.net/eson_15/article/details/51090040)）；SpringMVC是基于Spring实现的MVC Web框架）。
-### Maven
+#### 2.Maven
 Maven是一个项目管理工具，有一套标准的工程结构。其核心配置文件是pom.xml，描述了项目信息，依赖关系等。
 
 由于Java项目中需要引入各种jar包，还存在版本差异，把这些依赖关系在pom.xml里面描述，maven就会自动从本地或远程仓库寻找依赖，不用再去一个个下载、拷贝jar包了。
@@ -38,7 +35,7 @@ Maven是一个项目管理工具，有一套标准的工程结构。其核心配
           <version>${spring.version}</version>
       </dependency
 ```
-### 代码结构
+#### 3.代码结构
 Java源码包含Model、DAO、Service、Controller四个包，其中：
 - Model：存放数据模型
 - DAO：实现直接操作Model的接口及方法，比如实现getPerson()
@@ -46,11 +43,13 @@ Java源码包含Model、DAO、Service、Controller四个包，其中：
 - Controller：使用Service提供的功能，实现数据分发及页面展示。
 
 工程结构如下：
-![工程结构](http://upload-images.jianshu.io/upload_images/6240664-2bd4a35112c67db4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![工程结构](https://imgconvert.csdnimg.cn/aHR0cDovL3VwbG9hZC1pbWFnZXMuamlhbnNodS5pby91cGxvYWRfaW1hZ2VzLzYyNDA2NjQtMmJkNGEzNTExMmM2N2RiNC5wbmc?x-oss-process=image/format,png)
+项目源码：https://github.com/zhang35/QuizWeb.git
 
 ---
 
 ## 开发环境
+
 集成开发环境（IDE）：IntelliJ IDEA 2017.3.2 
 本地服务器：Tomcat 9.0.2
 数据库： MySQL 5.7
@@ -58,24 +57,22 @@ Java源码包含Model、DAO、Service、Controller四个包，其中：
 操作系统：MacOS
 
 ---
-
 ## 开发步骤
-### 准备工作
+### 1. 准备工作
 - 如何使用IDEA创建web工程，参考：
  [使用IntelliJ IDEA开发java web](http://www.cnblogs.com/carsonzhu/p/5468223.html)
 
 - 如何使用IDEA配置maven仓库，加快加载依赖包的速度，参考：
 [IDEA配置maven(配置阿里云中央仓库)](http://www.cnblogs.com/sword-successful/p/6408281.html)
 
-### 搭建SSH项目
+### 2. 搭建SSH项目
 - 如何在IntelliJ与Maven的环境下搭建Spring+SpringMVC+Hibernate项目，参考：
 [Spring-SpringMVC-Hibernate在IntelliJ与Maven的环境下搭建](http://blog.csdn.net/haluoluo211/article/details/52225074)
 
-### 实现投票功能
+### 3. 实现投票功能
 从操作流程出发，实现思路是：
-
-#### 输入网址进入投票界面。（SpringMVC控制网址->页面的映射）
-在web.xml中配置SpringMVC使之生效，web.xml：
+#### 3.1 输入网址进入投票界面。（SpringMVC控制网址->页面的映射）
+3.1.1 在web.xml中配置SpringMVC使之生效，web.xml：
 ```
    <servlet>
         <servlet-name>spring-dispatcher</servlet-name>
@@ -87,7 +84,7 @@ Java源码包含Model、DAO、Service、Controller四个包，其中：
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 ```
-在SpringMVC的配置文件servletname-servlet.xml中配置地址过滤规则，spring-dispatcher-servlet.xml：
+3.1.2 在SpringMVC的配置文件servletname-servlet.xml中配置地址过滤规则，spring-dispatcher-servlet.xml：
 ```
     <context:component-scan base-package="web.quiz.controller" /><!-- 要扫描的包-->
     <mvc:annotation-driven />
@@ -100,7 +97,7 @@ Java源码包含Model、DAO、Service、Controller四个包，其中：
     <mvc:default-servlet-handler />
 ```
 
-最后，在Controller中控制页面分发，QuizController.java：
+3.1.3 最后，在Controller中控制页面分发，QuizController.java：
 ```
     @RequestMapping(value = "vote", method = RequestMethod.GET)
     public String index() {
@@ -108,8 +105,8 @@ Java源码包含Model、DAO、Service、Controller四个包，其中：
     }
 ```
 
-#### 获取问卷内容。（Hibernate+Spring从数据库中读取问卷信息，发送到前端页面）
-首先使用Hibernate关联对象与数据库。Hibernate有配置xml和注解两种实现方式，本文使用注解。Person.java：
+####3.2 获取问卷内容。（Hibernate+Spring从数据库中读取问卷信息，发送到前端页面）
+3.2.1 首先使用Hibernate关联对象与数据库。Hibernate有配置xml和注解两种实现方式，本文使用注解。Person.java：
 ```
 //@javax.persistence.Entity注解一个实体Bean。数据表中的行对应实例，列对应实例的属性
     @Entity
@@ -119,7 +116,7 @@ Java源码包含Model、DAO、Service、Controller四个包，其中：
 	    private String name;            //姓名
     }
 ```
-然后实现相应的DAO接口。PersonDAO.java、PersonDAOImpl.java：
+3.2.2 然后实现相应的DAO接口。PersonDAO.java、PersonDAOImpl.java：
 ```
     public interface PersonDAO {
         public List<Person> getAll();
@@ -135,7 +132,7 @@ Java源码包含Model、DAO、Service、Controller四个包，其中：
       }
   }
 ```
-PersonDAOImpl中要用的sessionFactory怎么来？什么是SessionFactory：
+3.2.3 PersonDAOImpl中要用的sessionFactory怎么来？什么是SessionFactory：
 > SessionFactory接口负责初始化Hibernate。SessionFactory并不是轻量级的，因为一般情况下，一个项目通常只需要一个SessionFactory就够。
 
 所以把SessionFactory放在Web初始化时候生成，使用Spring实现其自动装配。
@@ -152,7 +149,7 @@ PersonDAOImpl中要用的sessionFactory怎么来？什么是SessionFactory：
 ```
 
 然后在Spring配置文件中配置Hibernate，spring-jdbc.xml：
-```  
+```
        <!--自定义的hibernate.properties文件,下面${XXX}的内容来源-->
        <context:property-placeholder location="classpath:/META-INF/properties/hibernate.properties" />
 
@@ -194,7 +191,7 @@ PersonDAOImpl中要用的sessionFactory怎么来？什么是SessionFactory：
 
 至此，PersonDAOImpl中有了可用的sessionFactory，它的功能也能尽数实现了，如3.2.2中所示。
 
-此时有了PersonDAO的实现，进一步封装成可直接用的服务。DBService.java 、DBServiceImpl.java：
+3.2.4 此时有了PersonDAO的实现，进一步封装成可直接用的服务。DBService.java 、DBServiceImpl.java：
 ```
 public interface DBService{
     public List<Person> loadPersons();
@@ -224,7 +221,7 @@ public class QuizController {
 }
 ```
 
-把读取的内容发给前端JSP页面。本文使用了两种方法，一是传json回去，二是直接传对象回去。
+3.2.5 把读取的内容发给前端JSP页面。本文使用了两种方法，一是传json回去，二是直接传对象回去。
 
 **方法一**：传json到前端，用拼接字符串的方式生成页面。这种方法很笨，当时知识面太窄。不过用json传数据在做数据可视化时比较方便，所以也保留了这些代码。QuizController.java：
 ```
@@ -281,12 +278,12 @@ public ModelAndView check(HttpServletRequest request, HttpServletResponse respon
         return new ModelAndView("detail");
     }
 ```
-扩展知识
+3.2.6 扩展知识
 上述传参方式叫REST( Representational State Transfer)风格。
-关于SpringMVC应用REST风格，参考：[Spring MVC 实现增删改查 - CSDN博客](https://www.baidu.com/link?url=d-Rg_gxkKlAH95hnCYk2_m7EqFvgBpt9a3ZiWCFLgiN0fTCCqs4KH0dAW0MI8b0_MdvigqzLJSI0ysAufrE0uK&wd=&eqid=b83da03c00046a25000000025a67d318)
+关于SpringMVC应用REST风格，参考：[Spring MVC 实现增删改查 - CSDN博客](https://www.baidu.com/link?url=d-Rg_gxkKlAH95hnCYk2_m7EqFvgBpt9a3ZiWCFLgiN0fTCCqs4KH0dAW0MI8b0_MdvigqzLJSI0ysAufrE0uK&wd=&eqid=b83da03c00046a25000000025a67d318)
 关于其它URL传参方式，参考： [SpringMVC之@RequestParam @PathVariable对比](http://www.cnblogs.com/wangchuanfu/p/5913310.html)
 关于SpringMVC中各种常用传值方法，参考：[springMVC 将controller中数据传递到jsp页面](http://blog.csdn.net/sunshine__me/article/details/49494545)
-### 填写问卷，点提交。(Controller接收前端表单，结果写入数据库)
+#### 3.3 填写问卷，点提交。(Controller接收前端表单，结果写入数据库)
 主要是前端传值到后端的问题。
 在vote.jsp中：
 ```
@@ -307,14 +304,14 @@ public ModelAndView check(HttpServletRequest request, HttpServletResponse respon
         }
     }
 ```
-### 管理员登录，查看结果。(身份验证后，JSP展示结果)
+#### 3.4 管理员登录，查看结果。(身份验证后，JSP展示结果)
 提供管理员登录页面login.jsp，登录后进入参评人列表页面result.jsp；点击参评人超链接，进入详细成绩页面detail.jsp，统计分析个人得票结果。
 
 到这里已经没有什么难度，不再写了。
 
 ---
 ## 一点心得
-### hibernate如何将数组成员对应到数据库
+### 1. hibernate如何将数组成员对应到数据库
 
 对于Question对象，成员id、title都能自动对应数据库中表的一列，而options作为一个List就带来很多麻烦。
 
@@ -331,5 +328,3 @@ public ModelAndView check(HttpServletRequest request, HttpServletResponse respon
 ---
 ## 结语
 终于搭好Java SSH这个架子，实现了基本功能，但不想再继续写了。Web技术迭代太快，后面去尝试下其它技术。
-
-项目源码：https://github.com/zhang35/QuizWeb.git

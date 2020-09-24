@@ -8,13 +8,17 @@ tags:
 categories: vba编程
 description: 为了给ppt添加复杂功能，需要后台插入vba代码。下面整理一下为ppt插入、关联vba代码的基本流程，以及一些Bug的解决方法。
 ---
-基于vba，ppt实现了如下功能：
+首先严重声明一下，我不是ppt高手，酷炫动画、美化之类一概不会，我只会写点代码，汇报ppt做得要多丑有多丑。
 
-![随机抽点](https://upload-images.jianshu.io/upload_images/6240664-f638f351d264ded7.gif?imageMogr2/auto-orient/strip)
+16年底，有幸拿到一份答题ppt模板，接手做了“XX知识问答竞赛”ppt，包含选题答题、倒计时、随机抽点等功能，初次接触到了VBA（Visual Basic for Applications）编程。
 
-![选题答题，加减分](https://upload-images.jianshu.io/upload_images/6240664-ce4749c3d065a12f.gif?imageMogr2/auto-orient/strip)
+于是自那以后包办了单位各种答题类ppt……最近利用工作间隙又干了一票，感到是时候总结一下，把这项光荣而艰巨的任务传递下去了。
 
-![倒计时，并播放提示音](https://upload-images.jianshu.io/upload_images/6240664-cebdda5833bd6baf.gif?imageMogr2/auto-orient/strip)
+![随机抽点](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LWY2MzhmMzUxZDI2NGRlZDcuZ2lm)
+
+![选题答题，加减分](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LWNlNDc0OWMzZDA2NWExMmYuZ2lm)
+
+![倒计时，并播放提示音](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LWNlYmRkYTU4MzNiZDZiYWYuZ2lm)
 
 为了给ppt添加复杂功能，需要后台插入vba代码。下面整理一下为ppt插入、关联vba代码的基本流程，以及一些Bug的解决方法。
 
@@ -24,33 +28,33 @@ description: 为了给ppt添加复杂功能，需要后台插入vba代码。下�
 ### 显示“开发工具”
 在菜单栏显示“开发工具”，方便后续开发。
 打开ppt，点 文件->选项->自定义功能区，勾选“开发工具”。
-![](https://upload-images.jianshu.io/upload_images/6240664-2013859b33b141e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LTIwMTM4NTliMzNiMTQxZTMucG5n?x-oss-process=image/format,png)
 
-![出现“开发工具”菜单](https://upload-images.jianshu.io/upload_images/6240664-d3e0421b7258b34c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![出现“开发工具”菜单](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LWQzZTA0MjFiNzI1OGIzNGMucG5n?x-oss-process=image/format,png)
 
 ### 选择引用库
 当需要读写Excel时，需勾选引用库。
 
-![点开发工具->工具->引用，勾选“Microsoft Excel 16.0 Object Library”](https://upload-images.jianshu.io/upload_images/6240664-9611c52ac97f9bc0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![点开发工具->工具->引用，勾选“Microsoft Excel 16.0 Object Library”](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LTk2MTFjNTJhYzk3ZjliYzAucG5n?x-oss-process=image/format,png)
 
 **注意：随office版本不同，16.0可能会变成12.0等，更换版本时（比如拿office 2010做的拷到office 2016的电脑上用）需要正确勾选。**
 
 ## 基本流程
 ### 插入形状
-![新建一页ppt，插入一个形状](https://upload-images.jianshu.io/upload_images/6240664-695556bf269399d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![新建一页ppt，插入一个形状](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LTY5NTU1NmJmMjY5Mzk5ZDAucG5n?x-oss-process=image/format,png)
 
 ### 插入按钮
-![点菜单栏->开发工具->“命令按钮”，在页面上拖动，插入按钮](https://upload-images.jianshu.io/upload_images/6240664-3134ace7858b609b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![点菜单栏->开发工具->“命令按钮”，在页面上拖动，插入按钮](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LTMxMzRhY2U3ODU4YjYwOWIucG5n?x-oss-process=image/format,png)
 
 ### 打开选择窗格，为对象命名（很重要！）
-![点菜单栏->开始->选择->选择窗格，打开对象选择窗口](https://upload-images.jianshu.io/upload_images/6240664-0fad3630e786d3fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![点菜单栏->开始->选择->选择窗格，打开对象选择窗口](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LTBmYWQzNjMwZTc4NmQzZmEucG5n?x-oss-process=image/format,png)
 
-![双击将矩形对象名，改名为shape_text，这就是VBA中关联的形状名](https://upload-images.jianshu.io/upload_images/6240664-8f34a7ecddadbf81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![双击将矩形对象名，改名为shape_text，这就是VBA中关联的形状名](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LThmMzRhN2VjZGRhZGJmODEucG5n?x-oss-process=image/format,png)
 
 ### 写代码
-![双击按钮，或点菜单栏->开发工具->查看代码，进入开发页面](https://upload-images.jianshu.io/upload_images/6240664-35d239ce84e1c346.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![双击按钮，或点菜单栏->开发工具->查看代码，进入开发页面](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LTM1ZDIzOWNlODRlMWMzNDYucG5n?x-oss-process=image/format,png)
 
-![写入如下代码，功能是在形状上显示一行文字](https://upload-images.jianshu.io/upload_images/6240664-b206419d6223d3b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![写入如下代码，功能是在形状上显示一行文字](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LWIyMDY0MTlkNjIyM2QzYjkucG5n?x-oss-process=image/format,png)
 
 ```VB
 Private Sub CommandButton1_Click()
@@ -67,17 +71,17 @@ End Sub
 ```
 
 然后回到ppt页面，为形状关联代码：
-![选中形状，点菜单栏->插入->动作->运行宏](https://upload-images.jianshu.io/upload_images/6240664-dceaddc3e2d3d9d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![选中形状，点菜单栏->插入->动作->运行宏](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LWRjZWFkZGMzZTJkM2Q5ZDcucG5n?x-oss-process=image/format,png)
 
 
 ### 运行代码
 方式一，播放ppt运行代码：
-![点击菜单栏最左侧按钮，返回ppt页面](https://upload-images.jianshu.io/upload_images/6240664-fb5aaff72dcd9fbb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![点击菜单栏最左侧按钮，返回ppt页面](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LWZiNWFhZmY3MmRjZDlmYmIucG5n?x-oss-process=image/format,png)
 
-![播放ppt，点击按钮，出现文字](https://upload-images.jianshu.io/upload_images/6240664-ada9f113675986b4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![播放ppt，点击按钮，出现文字](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LWFkYTlmMTEzNjc1OTg2YjQucG5n?x-oss-process=image/format,png)
 
 方式二，在开发页面直接运行代码（常用于调试）：
-![将光标放到希望运行的函数内，点菜单栏运行按钮](https://upload-images.jianshu.io/upload_images/6240664-d24e14303dd9371f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![将光标放到希望运行的函数内，点菜单栏运行按钮](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LWQyNGUxNDMwM2RkOTM3MWYucG5n?x-oss-process=image/format,png)
 
 以上是ppt vba开发基本流程，下面附上部分代码。
 
@@ -153,7 +157,7 @@ Private Sub TimerProc(ByVal hWnd As Long, ByVal Msg As Long, ByVal idEvent As Lo
 End Sub
 ```
 出现以下错误：
-![](https://upload-images.jianshu.io/upload_images/6240664-d418b407f709d323.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LWQ0MThiNDA3ZjcwOWQzMjMucG5n?x-oss-process=image/format,png)
 
 解决方法：将SetTimer声明的最后一个参数类型改为LongPtr，即指针类型即可。
 ```VB

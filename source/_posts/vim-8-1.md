@@ -8,11 +8,11 @@ description: Vim基础指令
 
 Vim是一个文本编辑器，遵循程序员的“极懒”原则：能用键盘就不用鼠标，能敲一次键盘解决就绝不敲第二次，手指能在近处就绝不挪远。
 
-![Vim](https://upload-images.jianshu.io/upload_images/6240664-2c3d0e6e1db50aa8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![Vim](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LTJjM2QwZTZlMWRiNTBhYTgucG5n?x-oss-process=image/format,png)
 
-![加过插件的Vim](https://upload-images.jianshu.io/upload_images/6240664-ce035d5913110c8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/520)
+![加过插件的Vim](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LWNlMDM1ZDU5MTMxMTBjOGIucG5n?x-oss-process=image/format,png)
 
-第一次见我哥用，我问他不用鼠标怎么移动光标呢？他给我演示了 行号+G 直接跳到某一行（想象一下不用腾出手挪鼠标，十指保持在键盘上飞舞的效率）。研三做项目时，国科毕业的博士师兄推荐用Vim，我们一起买了教材——《Vim 实用技巧》（Practice Vim），自此入坑，至今已三年。Vim虐我千百遍，我待Vim如初恋。
+第一次见我哥用，我问他不用鼠标怎么移动光标呢？他给我演示了 行号+G 直接跳到某一行（想象一下不用腾出手挪鼠标，十指保持在键盘上飞舞的效率）。研三做项目时，国科毕业的博士师兄推荐用Vim，买了教材——《Vim 实用技巧》（Practice Vim），自此入坑，至今已三年。Vim虐我千百遍，我待Vim如初恋。
 
 Vim极度高效优雅，比如想要删除一行文字，普通编辑器需要拿鼠标涂黑一整行再按退格，而Vim只需要按“dd”；再比如想要另起一行插入文字，普通编辑器需要拿鼠标找到当前行末尾按回车，而Vim只需要按“o”。
 
@@ -26,7 +26,7 @@ vim有4个模式：
 - 可视模式 (Visual-mode)：相当于普通文本编辑器下的“涂黑”，先选范围后编辑。
 
 Vim的操作清单如下（手动微笑）：
-![vim_cheat_sheet_for_programmers](https://upload-images.jianshu.io/upload_images/6240664-aa001c2945d33336.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![vim_cheat_sheet_for_programmers](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LWFhMDAxYzI5NDVkMzMzMzYucG5n?x-oss-process=image/format,png)
 
 这些快捷键通过一系列排列组合，能产生强大的效果。
 
@@ -49,6 +49,6 @@ c指change，i指inner，w指word。
 
 ## 常用指令
 网上找到的指令速记思维导图：
-![图片来自网络](https://upload-images.jianshu.io/upload_images/6240664-f6d93819183c7db7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![图片来自网络](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LWY2ZDkzODE5MTgzYzdkYjcucG5n?x-oss-process=image/format,png)
 
 要熟练掌握这些指令，无它，唯有多记多用。

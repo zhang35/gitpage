@@ -13,7 +13,7 @@ description: Git版本管理系统，git reset，git checkout --file。
 Git版本控制流程为：
 工作区（Working Directory / Copy）->暂存区(stage / index)->分支。
 
-![工作区、暂存区、分支（来自廖雪峰Git教程）](https://upload-images.jianshu.io/upload_images/6240664-4247d657a5780f7d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![工作区、暂存区、分支（来自廖雪峰Git教程）](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LTQyNDdkNjU3YTU3ODBmN2QucG5n?x-oss-process=image/format,png)
 
 
 工作区即当前目录，其中有一个隐藏目录.git，为版本库，记录了所有版本信息，包含暂存区和分支等；
@@ -30,7 +30,7 @@ Git版本控制流程为：
 > - Index
 > index也被称为staging area，是指一整套即将被下一个提交的文件集合。他也是将成为HEAD的父亲的那个commit
 > - Working Copy
-working copy代表你正在工作的那个文件集
+> working copy代表你正在工作的那个文件集
 
 > 当你第一次checkout一个分支，HEAD就指向当前分支的最近一个commit。在HEAD中的文件集（实际上他们从技术上不是文件，他们是blobs（一团），但是为了讨论的方便我们就简化认为他们就是一些文件）和在index中的文件集是相同的，在working copy的文件集和HEAD,INDEX中的文件集是完全相同的。所有三者(HEAD,INDEX(STAGING),WORKING COPY)都是相同的状态，GIT很happy。
 
@@ -42,9 +42,9 @@ working copy代表你正在工作的那个文件集
 
 ## 版本回退
 HEAD是指向当前版本的指针。回退版本其实就是改变HEAD指向的位置：
-![当前版本（来自廖雪峰Git教程）](https://upload-images.jianshu.io/upload_images/6240664-58c25acf98a6de7c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![当前版本（来自廖雪峰Git教程）](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LTU4YzI1YWNmOThhNmRlN2MucG5n?x-oss-process=image/format,png)
 
-![回退一个版本（来自廖雪峰Git教程）](https://upload-images.jianshu.io/upload_images/6240664-9379b0c9d31a3627.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![回退一个版本（来自廖雪峰Git教程）](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy82MjQwNjY0LTkzNzliMGM5ZDMxYTM2MjcucG5n?x-oss-process=image/format,png)
 
 版本回退命令为：
 `git reset [--hard|soft|mixed|merge|keep] [<commit>或HEAD]`
@@ -140,7 +140,7 @@ Changes not staged for commit:
 On branch master
 nothing to commit, working tree clean
 ```
-更改彻底没了。
+世界清净了。
 
 ## 小结
 简介了Git版本管理系统，总结了版本回退、丢弃修改的基本方法。

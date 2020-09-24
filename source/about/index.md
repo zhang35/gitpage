@@ -1,5 +1,5 @@
 ---
-title: Jinsane's 学习笔记
+title: zhang35's 学习笔记
 date: 2018-03-29 18:25:06
 comments: false
 ---
@@ -8,17 +8,15 @@ comments: false
 
 ### 个人简介
 
-![](https://github.com/zhang35/Image/blob/master/mehainan.jpg?raw=true)
-
 学历：硕士研究生
 
 专业：软件工程
 
-语言：C, C++, Java, Verilog, Html+css+js, Vb, Python 
+技能：Spark，Qt, Windows driver, Java Web（Spring+SpringMVC+Hibernate），AngularJS
 
-技能：Qt, Windows driver, Java Web（Spring+SpringMVC+Hibernate），AngularJS
+英语水平：雅思7.0分（听力7.5 阅读8.5 写作6.5 口语6.0）
 
 ### 联系方式
 
-邮: zhangjqfriend@126.com
+Email: zhangjqfriend@126.com
 
