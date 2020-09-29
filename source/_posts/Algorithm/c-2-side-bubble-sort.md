@@ -6,6 +6,7 @@ tags:
 - c
 - both sides
 description: 上浮和下沉过程交替的冒泡排序算法。
+categories: 算法
 ---
 
 同事考研遇到的数据结构题：

@@ -53,3 +53,20 @@ print(itemMaxValue[0], maxValue)
 # Sam 27
 ```
 
+
+
+## Queue
+
+层序遍历二叉树：
+
+```python
+from queue import Queue
+s = Solution()
+q = Queue()
+q.put(root)
+while not q.empty():
+    node = q.get()
+    print(node.val)
+    if node.left: q.put(node.left)
+    if node.right: q.put(node.right)
+```

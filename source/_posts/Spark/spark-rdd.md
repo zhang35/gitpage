@@ -24,11 +24,13 @@ RDD支持两种操作：转换（transformation）从现有的数据集创建一
 
 经典的WordCount例子，同时包含了actions和transformation，如下图：
 
-![img](https://images2018.cnblogs.com/blog/1228818/201804/1228818-20180421133911520-1150689001.png)
+![请添加图片描述](https://img-blog.csdnimg.cn/20200924133739758.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3poYW5nMzU=,size_16,color_FFFFFF,t_70#pic_center)
+
+
 
 其中hello.txt如下图：
 
-![img](https://images2018.cnblogs.com/blog/1228818/201804/1228818-20180421134031551-1670646166.png)
+![请添加图片描述](https://img-blog.csdnimg.cn/20200924133739657.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3poYW5nMzU=,size_16,color_FFFFFF,t_70#pic_center)
 
 下面是transformation和actions的常用算子介绍。
 
@@ -86,17 +88,12 @@ sc.parallelize(list).filter(_ >= 10).foreach(println)
 
 ##### map
 
-
-
-![img](https://user-gold-cdn.xitu.io/2019/5/17/16ac4e2eced3f9f1?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
-
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200924133915342.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3poYW5nMzU=,size_16,color_FFFFFF,t_70#pic_center)
 
 
 ##### flatMap
 
-
-
-![img](https://user-gold-cdn.xitu.io/2019/5/17/16ac4e30a8d1f28c?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/2020092413392219.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3poYW5nMzU=,size_16,color_FFFFFF,t_70#pic_center)
 
 
 
