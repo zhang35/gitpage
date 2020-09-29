@@ -1,6 +1,6 @@
 ---
 title: [117]Populating Next Right Pointers in Each Node II Python3实现
-date: 2020-09-24 10:35:26
+date: 2020-09-28 19:27:10
 tags: 二叉树
 description: 利用已有next指针，使用虚指针连接，空间复杂度O(1)
 categories: LeetCode

@@ -1,6 +1,6 @@
 ---
-3title: leetcode[235]Lowest Common Ancestor of a Binary Search Tree Python3实现
-date: 2020-09-24 10:35:26
+title: leetcode[235]Lowest Common Ancestor of a Binary Search Tree Python3实现
+date: 2020-09-27 13:38:27
 tags: 二叉树
 description: 二叉搜索树最低公共祖先
 categories: LeetCode

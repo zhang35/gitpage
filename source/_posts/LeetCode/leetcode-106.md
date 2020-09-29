@@ -1,6 +1,6 @@
 ---
 title: leetcode[106]从中序与后序遍历序列构造二叉树 Python3实现
-date: 2020-09-24 10:35:26
+date: 2020-09-26 10:35:26
 tags: 二叉树
 description: 递归，中序+后序构造二叉树
 categories: LeetCode
