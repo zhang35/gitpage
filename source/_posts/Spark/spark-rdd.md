@@ -3,7 +3,7 @@ title: Spark核心概念RDD
 date: 2020-09-23 17:14:00
 tags: spark
 categories: spark
-description: 
+description: RDD常用操作
 ---
 
 RDD（Resilient Distributed Datasets）弹性分布式数据集 ，是Spark中最基本的抽象，在 RDD 源码中这样来描述 RDD：
