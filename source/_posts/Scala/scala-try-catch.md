@@ -9,8 +9,6 @@ description: scala Try-Catch
 ## try-Catch
 
 ```scala
-
-​```
 try {
     // ...
 } catch {
@@ -19,17 +17,13 @@ try {
         System.err.println("exception===>: ...")  // 打印到标准err
     }
 }
-​```
-
-​```
-		try {
-			val a = 1 / 0
-		} catch {
-			case ex: Exception => {
-				println("bug")
-			}
-		}
-​```
-
 ```
-
+```scala
+try {
+	val a = 1 / 0
+} catch {
+	case ex: Exception => {
+		println("bug")
+	}
+}
+```
