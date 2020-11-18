@@ -1,7 +1,8 @@
 ---
 title: leetcode[617] Merge Two Binary Trees Python3实现
 date: 2020-09-23 11:37:14
-tags: 二叉树
+tags: 
+- 二叉树
 description: 经典递归，学习官方题解:先序遍历递归，合并二叉树
 categories: LeetCode
 ---

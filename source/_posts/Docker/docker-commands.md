@@ -1,7 +1,6 @@
 ---
 title: docker基础命令及手动保存、装载镜像方法
 date: 2020-10-12 10:49:26
-tags: 
 - docker
 categories: Docker
 description: 基础指令
@@ -13,6 +12,8 @@ description: 基础指令
 运行镜像：`docker run [image]`
 停止镜像：`docker stop [image]`
 删除镜像：`docker image rm [image]`
+
+或`docker rmi [image]`
 
 查看进程：`docker ps -a`
 删除容器：`docker rm [container]`

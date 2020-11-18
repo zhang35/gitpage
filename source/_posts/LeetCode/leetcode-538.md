@@ -1,7 +1,8 @@
 ---
 title: Leetcode[538]把二叉搜索树转换为累加树 Python3实现
 date: 2020-09-23 10:44:18
-tags: Leetcode 二叉树
+tags: 
+- 二叉树
 description: 简单dfs，nonlocal用法
 categories: LeetCode
 ---

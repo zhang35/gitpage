@@ -1,7 +1,8 @@
 ---
 title: leetcode[5473] 灯泡开关 IV medium C++实现（周赛题）
 date: 2020-07-26 10:35:26
-tags: 二叉树
+tags: 
+- 二叉树
 description: 智力题，O(n)思路详解
 categories: LeetCode
 ---

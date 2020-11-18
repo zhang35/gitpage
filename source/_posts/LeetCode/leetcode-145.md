@@ -1,7 +1,8 @@
 ---
 title: leetcode[145]Binary Tree Postorder Traversal Python3实现
 date: 2020-09-29 12:55:14
-tags: 二叉树
+tags: 
+- 二叉树
 description: 二叉树后序遍历，迭代版
 categories: LeetCode
 ---

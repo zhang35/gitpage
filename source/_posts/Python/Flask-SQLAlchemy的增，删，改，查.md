@@ -1,3 +1,8 @@
+作者：Dozing
+链接：https://www.jianshu.com/p/b729e84fae4f
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
 ### Flask-SQLAlchemy的使用：
 
 **ORM的好处：可以让我们操作数据库跟操作对象是一样的，非常方便，因为一个表就抽象成一个类，一条数据就抽象成该类的一个对象**
@@ -152,14 +157,22 @@ if __name__ == '__main__':
 
 2. 查：
 
-   
-
    ```python
    # select * from article where article.title = 'aaa';
-   article1 = Article.query,filter(Article.title == 'aaa').first()
+   article1 = Article.query.filter(Article.title == 'aaa').first()
    print('title:%s' % article1.title)
    print('content:%s' % article1.content)
    ```
+
+   ```python
+   # And操作
+   article1 = Article.query.filter(Article.title == 'aaa', Article.author == 'bbb').first()
+   
+   # 等价于
+   article1 = Article.query.filter(Article.title == 'aaa').filter(Article.author == 'bbb').first()
+   ```
+
+   
 
 3. 改：
 
@@ -809,10 +822,3 @@ def confirm(token):
         flash('The confirmation link is invalid or has expired.')
     return redirect(url_for('main.index'))
 ```
-
-
-
-作者：Dozing
-链接：https://www.jianshu.com/p/b729e84fae4f
-来源：简书
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

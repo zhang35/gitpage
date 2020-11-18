@@ -1,7 +1,8 @@
 ---
 title: Leetcode[968] Binary Tree Cameras Python3实现
 date: 2020-09-23 11:07:39
-tags: 二叉树
+tags: 
+- 二叉树
 description: 动态规划，分状态递归，hard，学习官方题解，待掌握
 categories: LeetCode
 ---

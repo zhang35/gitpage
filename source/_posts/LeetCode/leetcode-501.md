@@ -1,7 +1,8 @@
 ---
 title: leetcode[501]Find Mode in Binary Search Tree Python3实现
 date: 2020-09-24 10:35:26
-tags: 二叉树
+tags: 
+- 二叉树
 description: dfs，dict，Morris中序遍历待学
 categories: LeetCode
 ---

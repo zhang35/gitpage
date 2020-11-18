@@ -1,12 +1,10 @@
 ---
-title: Centos7 离线安装Docker
+title: Win7安装Docker
 date: 2020-10-12 10:20:26
 tags: 
-- centos7 
-- offline
+- Win7
 - docker
 categories: Docker
-description: 简单二进制安装
 ---
 
 win7系统下，一开始下载了docker desktop，发现安装失败：
